@@ -28,7 +28,9 @@ student.school()
 
 print(isinstance(student, Person))
 
+
 class Teacher(Person):
     pass
+
 
 print(issubclass(Teacher, Person))

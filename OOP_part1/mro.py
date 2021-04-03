@@ -1,4 +1,3 @@
-
 class A:
 
     def process(self):
@@ -18,6 +17,7 @@ class C(A, B):
 obj = C()
 obj.process()
 print(C.mro())
+
 
 class A:
     def process(self):

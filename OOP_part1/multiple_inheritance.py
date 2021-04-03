@@ -6,7 +6,6 @@ class Person:
     def show_name(self):
         print(f'My name is {self.first_name}')
 
-
     def show_age(self):
         print(f'I am {self.age} years old')
 

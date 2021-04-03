@@ -1,6 +1,7 @@
 a = 'str'
 print(dir(a))
 
+
 class Student:
     def __init__(self, student_id, rate):
         self.student_id = student_id
