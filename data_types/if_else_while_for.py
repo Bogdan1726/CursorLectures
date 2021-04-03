@@ -59,21 +59,26 @@ lst = [1, 5, 8]
 for i in lst:
     print(i ** 2)
 
+
 def test(a):
     print(a.append(1))
+
 
 test(lst)
 
 print(lst)
+
 
 def return_list():
     a = [1, 2]
     print(a)
     return a
 
+
 def append_list(a):
     a.append(1)
     print(a)
+
 
 append_list(return_list())
 old_list = return_list()

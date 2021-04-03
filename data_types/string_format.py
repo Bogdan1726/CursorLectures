@@ -1,4 +1,3 @@
-
 students_list = ['Andrii', 'Anna', 'Rostyslav']
 for student in students_list:
     str_1 = f"I am student and my name is {student}"

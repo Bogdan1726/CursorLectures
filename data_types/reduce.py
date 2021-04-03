@@ -1,4 +1,3 @@
- 
 from functools import reduce
 
 numbers = [0, 1, 2, 3, 4]
@@ -12,8 +11,8 @@ def my_add(a, b):
 
 reduce(my_add, numbers)
 
-sum = reduce(lambda a, b: a + b, numbers)
-print(sum)
+summa = reduce(lambda a, b: a + b, numbers)
+print(summa)
 
 str_lst = ['I am student', 'Doing some work', 'Great student']
 st_count = 0
