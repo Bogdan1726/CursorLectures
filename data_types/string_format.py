@@ -16,3 +16,5 @@ print(f"Time {verb} {preposition} an arrow. Fruit {verb} {preposition} a banana.
 name = "boo"
 friend_name = "foo"
 print('Hey %s, there is you friend %s!' % (name, friend_name))
+
+
