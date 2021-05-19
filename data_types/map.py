@@ -36,3 +36,7 @@ list_of_words = ['one', 'two', 'list', 'dict']
 
 new_list_of_words = list(map(str.upper, list_of_words))
 print(new_list_of_words)
+
+
+squares = list(map(lambda x: x * x, [0, 1, 2, 3, 4]))
+print(squares)
