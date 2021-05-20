@@ -112,3 +112,4 @@ print(summa(3, 345, 23432, 454, 343))
 summa_1 = lambda *args: f'Result: {sum(args)}'
 print(summa_1(3, 5365, 454, 34534))
 
+a = 5
