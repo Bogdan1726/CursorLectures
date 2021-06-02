@@ -1,8 +1,7 @@
+from dataclasses import dataclass
 
-import dataclasses
 
-
-@dataclasses.dataclass(frozen=True)
+@dataclass(frozen=True)
 class Book:
     title: str
     author: str
@@ -11,5 +10,5 @@ class Book:
 
 
 it = Book(title='IT', author='Stephan King', pages=1205, rate=4.58)
-
+it.rate = 5
 print(f"I read the {it.title} of {it.author}, it has {it.pages} pages and rate {it.rate}")

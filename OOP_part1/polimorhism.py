@@ -17,7 +17,7 @@ class Dog:
         self.age = age
 
     def about_me(self):
-        print(f'I am a dog. My name is {self.name}. '
+        print(f'I am a dog. My name is {self.name} '
               f'I am {self.age} years old.')
 
     def make_sound(self):

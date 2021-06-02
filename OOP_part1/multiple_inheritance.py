@@ -23,13 +23,13 @@ class Student:
 
 
 class Resident(Person, Student):
-    def __init__(self, name, age, student_id, school_id):
-        Person.__init__(self, name, age)
+    def __init__(self, first_name, age, student_id, school_id):
+        Person.__init__(self, first_name, age)
         Student.__init__(self, student_id, school_id)
 
 
 resident = Resident('Mike', 17, 12345678, 357)
-print(resident.show_name())
-print(resident.show_age())
-print(resident.get_student_id())
-print(resident.get_school_id())
+resident.show_name()
+resident.show_age()
+resident.get_student_id()
+resident.get_school_id()

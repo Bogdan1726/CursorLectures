@@ -1,12 +1,33 @@
-class Book:
-    def __init__(self):
-        page_1 = Page('This is content of page 1')
-        page_2 = Page('This is content of page 2')
-        self.pages = [page_1, page_2]
+"""
+Агрегация - недельная форма композиции. Если вы удалите объект-контейнер,
+объекты содержимого могут жить без объекта-контейнера.
+"""
 
 
-class Page:
-    def __init__(self, content):
-        self.content = content
+class Car:
 
-book = Book()
+    def __init__(self, engine, transmission):
+        self.engine = engine
+        self.transmission = transmission
+
+    def __str__(self):
+        return f'{self.engine} {self.transmission}'
+
+
+class Engine:
+
+    def __str__(self):
+        return f'Engine - 2.0'
+
+
+class Transmission:
+
+    def __str__(self):
+        return f'Transmission - АКПП'
+
+
+engine_1 = Engine()
+transmission_1 = Transmission()
+car = Car(engine_1, transmission_1)
+print(car)
+

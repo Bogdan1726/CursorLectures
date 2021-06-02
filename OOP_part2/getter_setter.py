@@ -1,11 +1,13 @@
 class Person:
-    name = 'Anna'
-
+    _name = 'Anna'
+    age = 22
 
 anna = Person()
+print(anna._name)
+
 
 setattr(anna, 'name', 'John')
-# print(anna.name)
+print(anna._name)
 print(getattr(anna, "name"))
 
 setattr(anna, 'age', 21)
@@ -13,4 +15,3 @@ setattr(anna, 'age', 21)
 print(getattr(anna, 'age'))
 
 john = Person()
-john.age

@@ -206,8 +206,7 @@ print(f'Result: {new_lst_2}')
 
 # 26. Considering the range of values: b = range(-10, 10), use the function filter to return only negative numbers.
 print(f'__________26__________')
-b = [i for i in range(-10, 10)]
-new_b = list(filter(lambda x: True if x < 0 else False, b))
+new_b = list(filter(lambda x: True if x < 0 else False, [i for i in range(-10, 10)]))
 print(f'Result: {new_b}')
 # 27*. Using the filter function, find the values that are common to the two lists:
 print(f'__________27__________')
@@ -215,4 +214,3 @@ list_1 = [1, 2, 3, 5, 7, 9]
 list_2 = [2, 3, 5, 6, 7, 8]
 new_lst_3 = list(filter(lambda x: True if x in list_2 else False, list_1))
 print(f'Result: {new_lst_3}')
-

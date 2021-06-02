@@ -1,5 +1,18 @@
+class Circle:
+
+    def __init__(self, r):
+        self.r = r
+
+    def area(self):
+        return 3.14 * self.r ** 2
+
+
+circle = Circle(10)
+print(circle.area())
+
 
 class Circle:
+
     def __init__(self, r):
         self.r = r
 
@@ -11,7 +24,9 @@ class Circle:
 circle = Circle(10)
 print(circle.area)
 
+
 class Person:
+
     def __init__(self, name='Anna', age=0):
         self.name = name
         self._age = age
@@ -20,9 +35,6 @@ class Person:
     def age(self):
         print('getter method called')
         return self._age
-
-    # def get_age(self):
-    #     return self._age
 
     @age.setter
     def age(self, x):
@@ -34,13 +46,6 @@ class Person:
             self._age = x
 
 
-
-    # def del_age(self):
-    #     del self._age
-
-    # age = property(get_age, set_age, del_age)
-
-
 anna = Person()
-anna.age = 16
+anna.age = 19
 print(anna.age)

@@ -1,8 +1,18 @@
+from dataclasses import dataclass
 
-import dataclasses
+
+@dataclass
+class UserID:
+    user_id: int
+    default_user_id: int = 1
 
 
-@dataclasses.dataclass
+user = UserID(5)
+print(user.user_id)
+print(user.default_user_id)
+
+
+@dataclass
 class Article:
     """
     This class for holding the article content information
@@ -16,11 +26,11 @@ class Article:
 
 python = Article('Python', 'John', 'EN', 2345, 4.05)
 python.reviewers = 'Anna'
+python.rate = 34
+print(python.reviewers)
 print(type(python.topic))
-
-
 print(python)
 print(python.rate)
 
-python_d = {'topic': 'Python', 'author': 'John', 'language': 'EN', 'likes': 2345, 'rate': 4.05}
-print(python_d['likes'])
+
+
