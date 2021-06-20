@@ -33,3 +33,4 @@ resident.show_name()
 resident.show_age()
 resident.get_student_id()
 resident.get_school_id()
+

@@ -2,13 +2,13 @@ class Person:
     _name = 'Anna'
     age = 22
 
+
 anna = Person()
-print(anna._name)
 
+print(getattr(anna, '_name'))
 
-setattr(anna, 'name', 'John')
-print(anna._name)
-print(getattr(anna, "name"))
+setattr(anna, '_name', 'John')
+print(getattr(anna, '_name'))
 
 setattr(anna, 'age', 21)
 # print(anna.age)

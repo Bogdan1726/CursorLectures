@@ -1,39 +1,71 @@
 # Single responsibility principle
-class User:
-    def __init__(self, name):
-        self.name = name
-
-    def get_name(self):
-        pass
-
-    def save(self, user):
-        pass
-
-    def get_user(self, user_id):
-        pass
+# Принцип единственной обязанности
 
 
-# ------
+# Bad practice
+class DataTime:
+    import datetime
 
-class User:
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, name_city):
+        self.name_city = name_city
 
-    def get_name(self):
-        pass
+    def print_date(self):
+        return f'Date of the {self.name_city}: {self.datetime.datetime.now()}'
+
+    def print_weather(self):
+        temp = 32
+        return f'Weather of the {self.name_city}: {temp}\u2103'
+
+    def __str__(self):
+        return f'{self.print_date()}\n' \
+               f'{self.print_weather()}'
 
 
-class UserDB:
-    def get_user(self, user_id):
-        pass
+city = DataTime('Kiev')
+print(city)
 
-    def save(self, user):
-        pass
+
+# Best practice
+
+class DataTime:
+    import datetime
+
+    def __init__(self, name_city):
+        self.name_city = name_city
+
+    def print_date(self):
+        return f'Date of the {self.name_city}: {self.datetime.datetime.now()}'
+
+    def __str__(self):
+        return f'{self.print_date()}'
+
+
+date = DataTime('London')
+print(date)
+
+
+class Weather:
+
+    def __init__(self, name_city):
+        self.name_city = name_city
+
+    def print_weather(self):
+        temp = 32
+        return f'Weather of the {self.name_city}: {temp}\u2103'
+
+    def __str__(self):
+        return f'{self.print_weather()}'
+
+
+weather = Weather('Dubai')
+print(weather)
 
 
 # Open/closed principle
+# Принцип открытости/закрытости
 
 # Bad practice
+
 class Discount:
     def __init__(self, customer, price):
         self.customer = customer
@@ -49,7 +81,8 @@ class Discount:
 
 
 # Best practice
-class Discount:
+
+class Discount1:
     def __init__(self, customer, price):
         self.customer = customer
         self.price = price
@@ -59,7 +92,7 @@ class Discount:
             return self.price * 0.2
 
 
-class VIPDiscount(Discount):
+class VIPDiscount(Discount1):
     def give_discount(self):
         return super().give_discount() * 2
 
@@ -69,7 +102,18 @@ class SuperVIPDiscount(VIPDiscount):
         return super().give_discount() * 2
 
 
+discount = Discount1('favorite', 3000)
+print(discount.give_discount())
+discount1 = VIPDiscount('favorite', 3000)
+print(discount1.give_discount())
+discount2 = SuperVIPDiscount('favorite', 3000)
+print(discount2.give_discount())
+
+
 # Liskov substitution principle
+# Принцип подстановки Лисков
+
+
 class Board:
     def __init__(self, board_type):
         self.board_type = board_type
@@ -88,7 +132,9 @@ class UserLiskov:
 
 
 class OldBoard(Board):
-    pass
+
+    def get_board_type(self):
+        return self.board_type
 
 
 board = Board('classic')
@@ -98,6 +144,8 @@ user_white = UserLiskov('white', board)
 user_black = UserLiskov('black', board_1)
 
 # Interface segregation principle
+# Принцип разделения интерфейса
+
 from abc import ABC, abstractmethod
 
 
@@ -128,6 +176,8 @@ class Rectangle(Shape):
 
 
 # Dependency inversion principle
+# Принцып инверсии зависимостей
+
 
 class AuthForUser:
     def __init__(self, connect):
@@ -153,8 +203,6 @@ class GitHubAuth(AuthForUser):
 
 
 class Permission(AuthForUser):
-    def __init__(self, auth):
-        self.auth = auth
 
     def has_persmission(self):
         pass
@@ -162,4 +210,4 @@ class Permission(AuthForUser):
 
 class IsLoggedInPermission(Permission):
     def last_login(self):
-        return auth.last_login
+        pass

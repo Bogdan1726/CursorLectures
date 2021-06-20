@@ -17,14 +17,14 @@ class Article:
     """
     This class for holding the article content information
     """
-    topic: str
+    topic: int
     author: str
     language: str
     likes: int
     rate: float
 
 
-python = Article('Python', 'John', 'EN', 2345, 4.05)
+python = Article(4, 'John', 'EN', 2345, 4.05)
 python.reviewers = 'Anna'
 python.rate = 34
 print(python.reviewers)

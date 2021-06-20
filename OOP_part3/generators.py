@@ -50,3 +50,4 @@ def read_lines(directory, pattern=None):
                     if pattern in line:
                         lines.append(line)
     yield lines
+
